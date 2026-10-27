@@ -17,7 +17,7 @@ class Solution {
 
 
 //OPTIMIZED APPROACH
-//Time Complexity: O(n)
+//Time Complexity: O(n)    &    Space Complexity: O(1)
 /*class Solution {
     public int longestOnes(int[] nums, int k) {
         int l = 0;
