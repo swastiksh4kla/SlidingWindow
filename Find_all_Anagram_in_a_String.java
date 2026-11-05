@@ -26,3 +26,39 @@ class Solution {
         return tempMap.equals(map);
     }
 }
+
+
+//OPTIMIZED SOLUTION (using array)
+//Time Complexity: O(n*k)    &    Space Complexity: O(1)
+/*
+class Solution {
+    public List<Integer> findAnagrams(String s, String p) {
+        //OPTIMIZED
+        ArrayList<Integer> l = new ArrayList<>();
+        if(s==null || p==null || s.length()<p.length()) return l;
+        int[] arr_s = new int[26];
+        int[] arr_p = new int[26];
+        for(int i=0; i<p.length(); i++){
+            arr_p[p.charAt(i)-'a']++;
+            arr_s[s.charAt(i)-'a']++;
+        }
+        int left = 0;
+        for(int i=p.length(); i<=s.length(); i++){
+            if(isAnagram(arr_s, arr_p)){
+                l.add(left);
+            }
+            if(i==s.length())   break;
+            arr_s[s.charAt(left)-'a']--;
+            arr_s[s.charAt(i)-'a']++;
+            left++;
+        }
+        return l;
+    }
+    private boolean isAnagram(int[] arr_s, int[] arr_p){
+        for(int i=0; i<26; i++){
+            if(arr_p[i]!=arr_s[i])  return false;
+        }
+        return true;
+    }
+}
+*/
